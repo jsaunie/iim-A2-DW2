@@ -12,11 +12,17 @@
             width: 500px;
             height: 500px;
             background-color: red;
+            position: relative;
+            margin-bottom: 30px;
         }
-        #div2 {
+        .scare {
+            position: absolute ;
+            z-index: 9;
             width: 50px;
             height: 50px;
             background-color: blue;
+            top: 0;
+            left: 0;
         }
     </style>
 </head>
@@ -25,7 +31,7 @@
     <h1>Expérimentation 2</h1>
 
     <div id="div1">
-        <div id="div2"></div>
+        <div id="div2" class="scare"></div>
     </div>
 
 </body>
