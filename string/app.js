@@ -6,6 +6,8 @@
  */
 const char1 = "Bonjour";
 console.log(char1.charAt(2));
+// Autre solution 
+console.log(char1[2]);
 /**
  * Exercice 2 :
  * Affichez la taille de cette string
@@ -31,22 +33,31 @@ const word1 = "Oui ";
 const word2 = "ou Non";
 console.log(word1.concat(word2));
 
+// Autre solution
+console.log(word1 + word2);
+
 /**
  * Exercice 4 :
  * Insérez une variable dans la variable phrase et affichez phrase
  * Remarque : Ne pas concaténer
  */
 const age = 10;
-const phrase = "Mon âge est "+age;
+const phrase = "Mon âge est "+age; // Correction : Utilise les strings litéral => `Mon âge est ${age} ans.`
 console.log(phrase);
 
+// Correction
+console.log('String litéral :', `Mon âge est ${age} ans.`);
 
 /**
  * Exercice 5 :
  * Supprimez les 5 derniers charactères de la chaine
  */
 const char5 = "les prochaines caractères";
-console.log(char5.substr(0,21));
+console.log(char5.substr(0,21)); // et si tu connais pas la longueur de ta chaines ? Si elle fait mois ou plus que 22 charactères ?
+
+// Correction
+const char5C = "les prochains caractères";
+char5C.substr(0, char5C.length - 5);
 
 /**
  * Exercice 6 :
@@ -94,5 +105,5 @@ console.log(char1.trim());
  * - CamelCase
  */
 const str = '   Supprimez les espaces avant et après cette phrase    ';
-console.log(str.trim().replace(/ /g,"_").toLowerCase('FR'));
-console.log(str.trim().replace(/ /g,"-").toLowerCase('FR'));
+console.log(str.trim().replace(/ /g,"_").toLowerCase()); // Attention .toLowerCase() ne prend pas de paramètre
+console.log(str.trim().replace(/ /g,"-").toLowerCase()); // Attention .toLowerCase() ne prend pas de paramètre
