@@ -14,6 +14,19 @@ document.addEventListener('DOMContentLoaded',function () {
     });
 
 });
+
+// Correction
+// J'ai testé, ta réalisation fonctionne mais il faut appuyer sur entrée
+document.addEventListener('DOMContentLoaded', function () { // Vérifiez que le dom est bien créé
+    let input = document.getElementById("input"); // Sélectionnez l'input par son id
+    input.addEventListener('input', function (el) {  // Ajoutez un événement lorsque la valeur de l'input change
+        const val = el.target.value; // Stockez la valeur du contenu
+
+        const para = document.getElementById('content'); // Sélectionnez une balise <p></p> via son id
+        para.innerText = val; // Insérez ce contenu dans la balise p créé
+    })
+});
+
 /**
  * Exercice 2 :
  * - Vérifiez que le dom est bien créé
@@ -30,7 +43,7 @@ document.addEventListener('DOMContentLoaded',function () {
     var item1 = document.getElementsByClassName("item")[0].innerHTML;
 
     var garbage =document.getElementById("items").removeChild(item[0]);
-    var newitem = document.createElement("LI");
+    var newitem = document.createElement("LI"); // li
     var text = document.createTextNode(item1);
     newitem.appendChild(text);
     document.getElementById("items").appendChild(newitem);
