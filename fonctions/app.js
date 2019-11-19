@@ -36,8 +36,13 @@ checkd(5);
  * Créer une fonctionne qui s’invoque elle-même
  */
 function loopyland(arg) {
-    loopyland(arg)
+    loopyland(arg) // Attention là, si tu appelles ta fonction tu créés un call infinie, elle ne va jamais s'arrêter de s'appeler
+    // il faut mettre une condition et stoper le code dans ta condition pour eviter ça
 }
+// Correction
+(function corr4(a) {
+    console.log('bonjour :', a);
+})(1);
 
 /**
  * Exercice 5 :
@@ -45,12 +50,21 @@ function loopyland(arg) {
  */
 a= ["a","b","v","d"];
 function list(arg) {
-    for (i=0;i < arg.length;i++){
+    // Oublie pas "let i = 0" il faut instancer i
+    for (i=0;i < arg.length;i++){ 
         console.log(arg[i]);
     }
 
 }
 list(a);
+// Corection
+// Ta proposition est bonne simplement attention à instancier la variable i à la ligne 5
+
+function correc5(a, b, c) {
+    console.log(arguments);
+}
+
+correc5(1, 2, 3);
 
 /**
  * Exercice 6 :
