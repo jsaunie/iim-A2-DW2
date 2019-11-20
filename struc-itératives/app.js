@@ -3,7 +3,12 @@
  * En utilisant une boucle for, affichez une suite de nombre allant de 0 à 30 avec l’information pair ou impaire.
  */
     for (let i=0; i<= 30;i++){
-        console.log(i);
+        console.log(i); // Il manque l'information pair ou impaire
+        if (i%2) {
+            console.log('Inpaire');
+        } else {
+            console.log('pair');
+        }
     }
 /**
  * Exercice 2 :
@@ -18,7 +23,7 @@ while( j<=60){
     else if(j>30 && j<= 60){
         console.log("deuxième mois");
     }
-    else{
+    else{  // puisque le while ne va pas au dessus de 60 on ne rentrera jamais dans cette condition
         console.log("reste de l'année");
     }
     j++;
