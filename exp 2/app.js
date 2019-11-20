@@ -5,9 +5,11 @@
 function calcXPos(e,scare,container){
     return e.pageX -container.offsetLeft- (scare.offsetWidth/2);
 }
+
 function calcYPos(e,scare,container){
     return e.pageY -container.offsetTop- (scare.offsetWidth/2);
 }
+
 function inArea(e,scare,container){
     const limitTop= container.offsetTop;
     const limitRight= container.offsetLeft + container.offsetWidth - scare.offsetWidth;
@@ -22,26 +24,23 @@ function inArea(e,scare,container){
     }else{
         return false;
     }
-
-
-
 }
+
 window.addEventListener("DOMContentLoaded",function () {
     const container = document.getElementById('div1')
     const scare = document.getElementById('div2');
-    console.log('scare :',scare);
-    let isDown= false;
+   
+    let isDown = false;
+    
     scare.addEventListener('mousedown', function (e) {
         isDown =true;
     });
+    
     scare.addEventListener('mouseup',function (e) {
         isDown = false;
     });
+    
     document.addEventListener('mousemove',function (e) {
-        console.log('event :',e);
-        const x = e.pageX;
-        const y = e.pageY;
-
         // On check si on clique
         if(isDown && inArea(e,scare,container)){
             scare.style.left =  calcXPos(e,scare,container)+"px";
