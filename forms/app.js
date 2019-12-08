@@ -8,6 +8,15 @@
  * - Insérez ce contenu dans la balise p créé
  */
 
+document.addEventListener('DOMContentLoaded', function () { // Vérifiez que le dom est bien créé
+    let input = document.getElementById("input"); // Sélectionnez l'input par son id
+    input.addEventListener('input', function (el) {  // Ajoutez un événement lorsque la valeur de l'input change
+        const val = el.target.value; // Stockez la valeur du contenu
+
+        const para = document.getElementById('content'); // Sélectionnez une balise <p></p> via son id
+        para.innerText = val; // Insérez ce contenu dans la balise p créé
+    })
+});
 
 /**
  * Exercice 2 :
@@ -21,10 +30,23 @@
  * - Ajouter un nouveau li dans ce container
  */
 
+document.addEventListener('DOMContentLoaded', function () {
+    var item = document.getElementsByClassName("item");
+    var item1 = document.getElementsByClassName("item")[0].innerHTML;
+
+    document.getElementById("items").removeChild(item[0]);
+    var newitem = document.createElement("li");
+    var text = document.createTextNode(item1);
+    newitem.appendChild(text);
+    document.getElementById("items").appendChild(newitem);
+
+});
 
 /**
  * Exercice 3 :
  * Au téléchargement complet de la page
  * l'input doit être automatiquement focus
  */
-
+document.addEventListener('DOMContentLoaded',function () {
+    document.getElementById('input').focus();
+});

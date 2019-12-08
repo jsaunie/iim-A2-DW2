@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Js Natif - Où écrire son code javascript</title>
 
+    <script type="text/javascript">
+        alert('1');
+    </script>
 </head>
 <body>
 
@@ -19,7 +22,21 @@
         <li>Afficher une alert à la fin du chargement de la page</li>
     </ol>
 
-<button onclick="alert('hello');">Cliquez sur moi</button>
+<button id="ok" onclick="alert('hello');">Cliquez sur moi</button>
 
+    <script type="text/javascript">
+        // alert('2');
+
+        window.onload = function() {
+            alert('2');
+        }
+
+        window.addEventListener("DOMContentLoaded", (event) => {
+            console.log("DOM entièrement chargé et analysé");
+            alert('3');
+        });
+    </script>
+    <script src="anim.js"></script>
 </body>
+
 </html>

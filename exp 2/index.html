@@ -6,27 +6,41 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Js Natif - Expérimentation 2</title>
-    <script src="app.js"></script>
     <style>
-        #div1 {
+        #div1, #container {
             width: 500px;
             height: 500px;
             background-color: red;
+            position: relative;
+            margin-bottom: 30px;
         }
-        #div2 {
+        .scare {
             width: 50px;
             height: 50px;
             background-color: blue;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     </style>
 </head>
 <body>
 
+    <!-- V1 -->
     <h1>Expérimentation 2</h1>
-
+    <p>V1</p>
     <div id="div1">
-        <div id="div2"></div>
+        <div id="div2" class="scare"></div>
     </div>
 
+    <!-- V2 -->
+    <p>V2</p>
+    <div id="container">
+        <div class="scare"></div>
+    </div>
+    <button id="btn-add">Ajoutez un carré</button>
+
+    <!--<script src="app.js"></script>-->
+    <script src="correction.js"></script>
 </body>
 </html>

@@ -13,7 +13,11 @@ function getRandomArray(limit = 30) {
  * Créez un tableau avec la fonction getRandomArray() et multipliez par deux chaque valeur du tableau
  */
 const arr = getRandomArray();
-const result = arr.map(e => e *2);
+// const result = arr.map(e => e *2);
+console.log('arr bas :', arr);
+const result = arr.map(function(e) {
+  return e *2;
+} );
 console.log('result', result);
 
 /**
@@ -21,13 +25,24 @@ console.log('result', result);
  * Créez un tableau avec la fonction getRandomArray() et triez par ordre croissant les valeurs
  */
 const arr2 = getRandomArray();
-const result2 = arr2.sort((a, b) => a - b);
+// const result2 = arr2.sort((a, b) => a - b);
+const result2 = arr2.sort(function (a, b) {
+    return a - b;
+});
 console.log('result2', result2);
 
 /**
  * Exercicec 3.1 :
  * Créez un table avec la fonction getRandomArray() et additionnez toutes les valeurs entre elles
  */
+const arr3 = getRandomArray();
+
+// 1 + 2 + 3 + 4
+console.log('reduce :', arr3.reduce(function (acc, currValue) {
+    return acc + currValue;
+}, 0));
+
+// array.reduce(function(accumulator, currentValue), initialValue);
 
 
 /**
